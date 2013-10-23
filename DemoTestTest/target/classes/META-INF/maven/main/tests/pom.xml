@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>main</groupId>
+		<artifactId>main</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>apk</packaging>
+
+	<artifactId>tests</artifactId>
+
+	<properties>
+		<android.device>test</android.device>
+		<android.enableIntegrationTest>false</android.enableIntegrationTest>
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>integration-tests</id>
+			<activation>
+				<property>
+					<name>integration-tests</name>
+				</property>
+			</activation>
+			<properties>
+				<android.enableIntegrationTest>true</android.enableIntegrationTest>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android-test</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>support-v4</artifactId>
+			<version>r6</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>Demo</groupId>
+			<artifactId>Demo</artifactId>
+			<scope>provided</scope>
+			<type>apk</type>
+			<version>${project.version}</version>
+		</dependency>
+		<!-- <dependency> <groupId>com.your_company.package</groupId> <artifactId>your_application</artifactId> 
+			<scope>provided</scope> <type>jar</type> <version>${project.version}</version> 
+			</dependency> -->
+	</dependencies>
+</project>
