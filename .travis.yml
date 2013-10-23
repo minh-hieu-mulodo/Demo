@@ -33,4 +33,4 @@ script: mvn install -Pintegration-tests -Dandroid.device=test
 
 notifications:
   email:
-      - tran.nguyen@mulodo.com
+      - minh.hieu@mulodo.com
